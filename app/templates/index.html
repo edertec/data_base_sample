@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+        <h1>Bem-vindo ao Sistema de Ingressos</h1>
+    </header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('main.add_cliente') }}">Adicionar Cliente</a></li>
+                <li><a href="{{ url_for('main.add_ingresso') }}">Adicionar Ingresso</a></li>
+                <li><a href="{{ url_for('main.add_compra') }}">Registrar Compra</a></li>
+                <li><a href="{{ url_for('main.listar_compras') }}">Listar Compras</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer>
+        <p>Desenvolvido por @edertec</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Compras</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+
+    <h1>Compras Registradas</h1>
+    <table border="1">
+        <tr>
+            <th>Cliente</th>
+            <th>Evento</th>
+            <th>Quantidade</th>
+        </tr>
+        {% for compra in compras %}
+        <tr>
+            <td>{{ compra.cliente.nome }}</td>
+            <td>{{ compra.ingresso.evento }}</td>
+            <td>{{ compra.quantidade }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="3">Nenhuma compra registrada.</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('main.index') }}">Voltar</a>
+    </div>
+</body>
+</html>

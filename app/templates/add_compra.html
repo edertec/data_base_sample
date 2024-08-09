@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Compra</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+
+    <h1>Registrar Compra</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            <label for="cliente_id">Cliente:</label>
+            {{ form.cliente_id() }}
+        </p>
+        <p>
+            <label for="ingresso_id">Evento:</label>
+            {{ form.ingresso_id() }}
+        </p>
+        <p>
+            <label for="quantidade">Quantidade:</label>
+            {{ form.quantidade() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <a href="{{ url_for('main.index') }}">Voltar</a>
+    </div>
+</body>
+</html>
